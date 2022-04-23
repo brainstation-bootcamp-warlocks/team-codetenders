@@ -1,3 +1,2 @@
-h1 {
-  color: green;
-}
+@use '../styles/partials/nav-bar' as *;
+@use '../styles/partials/hero' as *;
