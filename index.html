@@ -1,27 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>CodeTenders</title>
+  </head>
+ 
+  
+          <body>
+            <nav class="nav">
+              <h2 class="nav__logo">CodeTenders</h2>
+            </nav>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/index.css">
-  <title>CodeTenders</title>
-</head>
+            <header>
+              <div class="hero">
+                <div class="hero__container">
+                  <img class="hero__img" src="./assets/images/bar.avif" alt="gentleman siting at bar">
+                  <p class="hero__title">The Best Drinks you can ever ask!</p>
+                </div>
+              </div>
+            </header>
 
-<body>
-  <nav class="nav">
-    <h2 class="nav__logo">CodeTenders</h2>
-  </nav>
+  <main>
+      <section class="ingredients">
+        <h2>Chose Your Ingredients</h2>
+        <div class="ingredients-list">
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="tequila" name="tequila" />
+            <label for="tequila">Tequila</label>
+          </div>
 
-  <header>
-    <div class="hero">
-      <div class="hero__container">
-        <img class="hero__img" src="./assets/images/bar.avif" alt="gentleman siting at bar">
-        <p class="hero__title">The Best Drinks you can ever ask!</p>
-      </div>
-    </div>
-  </header>
-</body>
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="vodka" name="vodka" />
+            <label for="vodka">Vodka</label>
+          </div>
 
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="whiskey" name="whiskey" />
+            <label for="whiskey">Whiskey</label>
+          </div>
+
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="rum" name="rum" />
+            <label for="rum">Rum</label>
+          </div>
+
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="gin" name="gin" />
+            <label for="gin">Gin</label>
+          </div>
+
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="wine" name="wine" />
+            <label for="wine">Wine</label>
+          </div>
+
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="brandy" name="brandy" />
+            <label for="brandy">Brandy</label>
+          </div>
+
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="champagne" name="champagne" />
+            <label for="champagne">Champagne</label>
+          </div>
+
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="beer" name="beer" />
+            <label for="beer">Beer</label>
+          </div>
+
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="martini" name="martini" />
+            <label for="martini">Martini</label>
+          </div>
+
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="scotch" name="scotch" />
+            <label for="scotch">Scotch</label>
+          </div>
+
+          <div class="ingredients-list__item">
+            <input type="checkbox" id="burbon" name="burbon" />
+            <label for="burbon">Burbon</label>
+          </div>
+        </div>
+        <button class="ingredients__button">SHAKE IT!</button>
+      </section>
+    </main>
+  </body>
 </html>
