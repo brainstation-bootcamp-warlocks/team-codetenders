@@ -1,0 +1,39 @@
+.drink {
+  padding: 3rem 5rem;
+
+  &__title {
+    font-size: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__name-img {
+    flex-direction: column;
+  }
+
+  &__img{
+    width: 20rem;
+    border-radius: 1rem;
+  }
+
+  &__subtitle {
+    padding-bottom: 1rem;
+  }
+
+  &__body-container {
+    flex-direction: column;
+    padding-left: 2rem;
+    align-self: center;
+  }
+
+  &__ingredient-container {
+    padding-bottom: 1rem;
+  }
+
+  &__instructions-title {
+    padding-bottom: 0.5rem;
+  }
+}

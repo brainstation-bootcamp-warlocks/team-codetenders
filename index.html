@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <title>CodeTenders</title>
-  </head>
 
-  <body>
-    <nav class="nav">
-      <h2 class="nav__logo">CodeTenders</h2>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/index.css" />
+  <title>CodeTenders</title>
+</head>
 
-    <header>
-      <div class="hero">
-        <div class="hero__container">
-          <img
-            class="hero__img"
-            src="./assets/images/bar.avif"
-            alt="gentleman siting at bar"
-          />
-          <p class="hero__title">The Best Drinks you can ever ask!</p>
-        </div>
+<body>
+  <nav class="nav">
+    <h2 class="nav__logo">CodeTenders</h2>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div class="hero__container">
+        <img class="hero__img" src="./assets/images/bar.avif" alt="gentleman siting at bar" />
+        <p class="hero__title">The Best Drinks you can ever ask!</p>
       </div>
-    </header>
+     </div>
+   </header>
 
     <main>
       <section class="ingredients">
@@ -168,9 +165,31 @@
               />Burbon</label
             >
           </div>
+  
+
+    <section class="drink">
+      <h2 class="drink__title">Your Top 5 Drinks</h2>
+      <div class="drink__container">
+        <div class="drink__name-img">
+          <h3 class="drink__subtitle">Drink Name</h3>
+          <img class="drink__img" src="./assets/images/drink.jpg" alt="drink">
         </div>
-        <button class="ingredients__button">SHAKE IT!</button>
-      </section>
-    </main>
-  </body>
+        <div class="drink__body-container">
+          <div class="drink__ingredient-container">
+            <p class="drink__ingredient">Ingredient One - <span class="drink__measurement">Amount</span></p>
+            <p class="drink__ingredient">Ingredient Two - <span class="drink__measurement">Amount</span></p>
+            <p class="drink__ingredient">Ingredient Three - <span class="drink__measurement">Amount</span></p>
+            <p class="drink__ingredient">Ingredient four - <span class="drink__measurement">Amount</span></p>
+          </div>
+          <div class="drink__instructions-container">
+            <h3 class="drink__instructions-title">Instructions</h3>
+            <p class="drink__instructions-body">Drinks instructions to follow</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
