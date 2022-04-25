@@ -53,6 +53,38 @@
   accent-color: #ea9c9c;
 }
 
+.drink {
+  padding: 3rem 5rem;
+}
+.drink__title {
+  font-size: 3rem;
+  padding-bottom: 3rem;
+}
+.drink__container {
+  display: flex;
+}
+.drink__name-img {
+  flex-direction: column;
+}
+.drink__img {
+  width: 20rem;
+  border-radius: 1rem;
+}
+.drink__subtitle {
+  padding-bottom: 1rem;
+}
+.drink__body-container {
+  flex-direction: column;
+  padding-left: 2rem;
+  align-self: center;
+}
+.drink__ingredient-container {
+  padding-bottom: 1rem;
+}
+.drink__instructions-title {
+  padding-bottom: 0.5rem;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
