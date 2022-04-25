@@ -1,0 +1,29 @@
+.ingredients {
+  padding: 3rem 5rem;
+  background-color: #ababab;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: white;
+    font-size: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+
+    flex: 0 0 25%;
+    padding: 1rem;
+  }
+}
+
+.item-box {
+  align-self: center;
+  accent-color: #ea9c9c;
+}

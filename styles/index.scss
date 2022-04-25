@@ -1,2 +1,8 @@
-@use '../styles/partials/nav-bar' as *;
-@use '../styles/partials/hero' as *;
+@use "../styles/partials/nav-bar" as *;
+@use "../styles/partials/hero" as *;
+@use "../styles/partials/ingredients" as *;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}

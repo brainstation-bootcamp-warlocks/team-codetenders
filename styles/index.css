@@ -1,10 +1,11 @@
 .nav {
   display: flex;
   justify-content: center;
-  background-color: gray;
+  background-color: #ababab;
 }
 .nav__logo {
   color: black;
+  padding: 1rem 0rem;
 }
 
 .hero__container {
@@ -20,7 +21,39 @@
 .hero__title {
   position: absolute;
   color: white;
-  top: 25rem;
+  top: 30rem;
   font-size: 3rem;
-  margin-left: 2rem;
+  padding-left: 5rem;
+}
+
+.ingredients {
+  padding: 3rem 5rem;
+  background-color: #ababab;
+  display: flex;
+  flex-direction: column;
+}
+.ingredients__title {
+  color: white;
+  font-size: 3rem;
+  padding-bottom: 3rem;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.ingredients-list__item {
+  display: flex;
+  flex: 0 0 25%;
+  padding: 1rem;
+}
+
+.item-box {
+  align-self: center;
+  accent-color: #ea9c9c;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
 }/*# sourceMappingURL=index.css.map */

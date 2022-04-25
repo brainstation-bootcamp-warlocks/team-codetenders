@@ -1,9 +1,9 @@
-
 .nav {
   display: flex;
   justify-content: center;
-  background-color: gray;
+  background-color: #ababab;
   &__logo {
     color: black;
+    padding: 1rem 0rem;
   }
 }
