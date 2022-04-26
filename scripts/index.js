@@ -19,8 +19,14 @@
         * </div>
       * </div> 
 */
-const url = '';
-const key = '';
+// Url
+const url = 'https://www.thecocktaildb.com/api/json/v2/';
+const key = '9973533';
+// search by multiple ingredients
+const urlFilter = '/filter.php?i=';
+const ingredient = [];
+// search by drink name
+const cocktailInfo = '/search.php?s=margarita';
 
 const displayDrinks = (drinksObject) => {
   const drinkContainer = document.createElement('div');
@@ -43,3 +49,55 @@ const displayDrinks = (drinksObject) => {
   const drinkBodyContainer = document.createElement('div');
   drinkBodyContainer.classList.add('drink__body-container');
 };
+
+const getForm = document.getElementById('ingredients__form');
+
+// read checks values to store them in array
+getForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const getCheckbox = document.querySelectorAll('input[type="checkbox"]');
+
+  if (ingredient !== '') {
+    ingredient.splice(0, ingredient.length);
+    for (let i = 0; i < getCheckbox.length; i++) {
+      if (getCheckbox[i].checked === true) {
+        ingredient.push(getCheckbox[i].value);
+      }
+    }
+  }
+
+  // prevent submit when checks are empty
+  // if (!getForm.cocktails.checked) {
+
+  // }
+
+  // call api function
+  fetchDrinks();
+  // reset checks
+  e.target.reset();
+});
+
+// get drinks by ingredients
+const fetchDrinks = () => {
+  const arrayToString = ingredient.join();
+  const getDrinks = url + key + urlFilter + arrayToString;
+  axios
+    .get(getDrinks)
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+// get drinks by Name
+const drinksInfo = () => {
+  const getDrinkByName = url + key + cocktailInfo;
+  axios.get(getDrinkByName).then((response) => {
+    console.log(response.data.drinks[0].strIngredient1);
+  });
+};
+
+drinksInfo();
+fetchDrinks();
