@@ -26,7 +26,9 @@ const key = "9973533";
 const urlFilter = "/filter.php?i=";
 const ingredient = [];
 // search by drink name
-const cocktailInfo = "/search.php?s=margarita";
+
+const cocktailInfo = '/search.php?s=';
+let drinkName;
 
 const displayDrinks = (drinksObject) => {
   const drinkContainer = document.createElement("div");
@@ -65,12 +67,11 @@ getForm.addEventListener("submit", (e) => {
       }
     }
   }
-
-  // prevent submit when checks are empty
-  // if (!getForm.cocktails.checked) {
-
-  // }
-
+  /* // prevent submit when checks are empty
+  if (!getForm.cocktails.checked) {
+    return false;
+  }
+ */
   // call api function
   fetchDrinks();
   // reset checks
@@ -81,23 +82,22 @@ getForm.addEventListener("submit", (e) => {
 const fetchDrinks = () => {
   const arrayToString = ingredient.join();
   const getDrinks = url + key + urlFilter + arrayToString;
+
   axios
     .get(getDrinks)
-    .then((response) => {
-      console.log(response.data);
+    .then(async (response) => {
+      let dataDrinks = [];
+      await response.data.drinks.reduce(async (previous, currentDrink) => {
+        await previous;
+        await axios
+          .get(url + key + cocktailInfo + currentDrink.strDrink)
+          .then((response) => dataDrinks.push(response.data.drinks[0]));
+      }, Promise.resolve());
+      console.log(dataDrinks);
     })
     .catch((error) => {
-      console.log(error);
+      console.log('Do not try that!!');
     });
 };
 
-// get drinks by Name
-const drinksInfo = () => {
-  const getDrinkByName = url + key + cocktailInfo;
-  axios.get(getDrinkByName).then((response) => {
-    console.log(response.data.drinks[0].strIngredient1);
-  });
-};
-
-drinksInfo();
 fetchDrinks();
