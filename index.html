@@ -1,117 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>CodeTenders</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./styles/index.css" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <title>CodeTenders</title>
-</head>
+  <body>
+    <nav class="nav">
+      <h2 class="nav__logo">CodeTenders</h2>
+    </nav>
 
-<body>
-  <nav class="nav">
-    <h2 class="nav__logo">CodeTenders</h2>
-  </nav>
-
-  <header>
-    <div class="hero">
-      <div class="hero__container">
-        <img class="hero__img" src="./assets/images/bar.avif" alt="gentleman siting at bar" />
-        <p class="hero__title">The Best Drinks you can ever ask!</p>
+    <header>
+      <div class="hero">
+        <div class="hero__container">
+          <img
+            class="hero__img"
+            src="./assets/images/bar.avif"
+            alt="gentleman siting at bar"
+          />
+          <p class="hero__title">The Best Drinks you can ever ask!</p>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section class="ingredients">
-      <h2 class="ingredients__title">Chose Your Ingredients</h2>
+    <main>
+      <section class="ingredients">
+        <h2 class="ingredients__title">Chose Your Ingredients</h2>
 
-      <!-- Adopting the Toggle Button
-        <div class="check">
-          <input id="check" type="checkbox" />
-          <label for="check"></label>
-        </div> -->
-
-      <div class="ingredients-list">
-        <form id="ingredients__form">
-          <div class="ingredients-list__item">
-            <label class="item-label" for="tequila"><input class="item-check-box" type="checkbox" id="tequila"
-                value="tequila" name="cocktails" />Tequila</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="vodka"><input class="item-check-box" type="checkbox" id="vodka" value="vodka"
-                name="cocktails" />Vodka</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="whiskey"><input class="item-check-box" type="checkbox" id="whiskey"
-                value="whiskey" />Whiskey</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="rum"><input class="item-check-box" type="checkbox" id="rum"
-                value="rum" />Rum</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="gin"><input class="item-check-box" type="checkbox" id="gin"
-                value="gin" />Gin</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="wine"><input class="item-check-box" type="checkbox" id="wine"
-                value="wine" />Wine</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="brandy"><input class="item-check-box" type="checkbox" id="brandy"
-                value="brandy" />Brandy</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="champagne"><input class="item-check-box" type="checkbox" id="champagne"
-                value="champagne" />Champagne</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="beer"><input class="item-check-box" type="checkbox" id="beer"
-                value="beer" />Beer</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="martini"><input class="item-check-box" type="checkbox" id="martini"
-                value="martini" />Martini</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="scotch"><input class="item-check-box" type="checkbox" id="scotch"
-                value="scotch" />Scotch</label>
-          </div>
-          <div class="ingredients-list__item">
-            <label class="item-label" for="burbon"><input class="item-check-box" type="checkbox" id="bourbon"
-                value="bourbon" />Bourbon</label>
+        <form id="ingredients-form" class="ingredients-form-container">
+          <div class="ingredients-list">
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="tequila"
+                value="tequila"
+              />
+              <label class="item-label" for="tequila">Tequila</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="vodka"
+                value="vodka"
+              />
+              <label class="item-label" for="vodka">Vodka</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="whiskey"
+                value="whiskey"
+              /><label class="item-label" for="whiskey">Whiskey</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="rum"
+                value="rum"
+              /><label class="item-label" for="rum">Rum</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="gin"
+                value="gin"
+              /><label class="item-label" for="gin">Gin</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="wine"
+                value="wine"
+              /><label class="item-label" for="wine">Wine</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="brandy"
+                value="brandy"
+              /><label class="item-label" for="brandy">Brandy</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="champagne"
+                value="champagne"
+              /><label class="item-label" for="champagne">Champagne</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="beer"
+                value="beer"
+              /><label class="item-label" for="beer">Beer</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="sambuca"
+                value="sambuca"
+              /><label class="item-label" for="sambuca">Sambuca</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="scotch"
+                value="scotch"
+              /><label class="item-label" for="scotch">Scotch</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="bourbon"
+                value="bourbon"
+              /><label class="item-label" for="bourbon">Bourbon</label>
+            </div>
           </div>
           <button class="ingredients__button" type="submit">SHAKE IT!</button>
         </form>
+      </section>
 
-    </section>
-
-    <section class="drink">
-      <h2 class="drink__title">Your Top 5 Drinks</h2>
-      <div class="drink__container">
-        <div class="drink__name-img">
-          <h3 class="drink__subtitle">Drink Name</h3>
-          <img class="drink__img" src="./assets/images/drink.jpg" alt="drink">
-        </div>
-        <div class="drink__body-container">
-          <div class="drink__ingredient-container">
-            <p class="drink__ingredient">Ingredient One - <span class="drink__measurement">Amount</span></p>
-            <p class="drink__ingredient">Ingredient Two - <span class="drink__measurement">Amount</span></p>
-            <p class="drink__ingredient">Ingredient Three - <span class="drink__measurement">Amount</span></p>
-            <p class="drink__ingredient">Ingredient four - <span class="drink__measurement">Amount</span></p>
+      <section class="drink">
+        <h2 class="drink__title">Your Top 5 Drinks</h2>
+        <div class="drink__container">
+          <div class="drink__name-img">
+            <h3 class="drink__subtitle">Drink Name</h3>
+            <img
+              class="drink__img"
+              src="./assets/images/drink.jpg"
+              alt="drink"
+            />
           </div>
-          <div class="drink__instructions-container">
-            <h3 class="drink__instructions-title">Instructions</h3>
-            <p class="drink__instructions-body">Drinks instructions to follow</p>
+          <div class="drink__body-container">
+            <div class="drink__ingredient-container">
+              <p class="drink__ingredient">
+                Ingredient One - <span class="drink__measurement">Amount</span>
+              </p>
+              <p class="drink__ingredient">
+                Ingredient Two - <span class="drink__measurement">Amount</span>
+              </p>
+              <p class="drink__ingredient">
+                Ingredient Three -
+                <span class="drink__measurement">Amount</span>
+              </p>
+              <p class="drink__ingredient">
+                Ingredient four - <span class="drink__measurement">Amount</span>
+              </p>
+            </div>
+            <div class="drink__instructions-container">
+              <h3 class="drink__instructions-title">Instructions</h3>
+              <p class="drink__instructions-body">
+                Drinks instructions to follow
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <script src="/scripts/index.js"></script>
-</body>
-
+      </section>
+    </main>
+    <script src="/scripts/index.js"></script>
+  </body>
 </html>
