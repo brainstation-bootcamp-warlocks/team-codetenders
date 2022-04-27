@@ -6,6 +6,8 @@
 .nav__logo {
   color: black;
   padding: 1rem 0rem;
+  font-size: 3rem;
+  font-weight: 600;
 }
 
 .hero__container {
@@ -23,6 +25,7 @@
   color: white;
   top: 30rem;
   font-size: 3rem;
+  font-weight: 700;
   padding-left: 5rem;
 }
 
@@ -36,6 +39,7 @@
   color: white;
   font-size: 3rem;
   padding-bottom: 3rem;
+  font-weight: 700;
 }
 .ingredients__button {
   display: flex;
@@ -98,6 +102,7 @@
 .drink__title {
   font-size: 3rem;
   padding-bottom: 3rem;
+  font-weight: 700;
 }
 .drink__container {
   display: flex;
@@ -127,4 +132,9 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Domine", serif;
+}
+
+body {
+  font-family: "Domine", serif;
 }/*# sourceMappingURL=index.css.map */
