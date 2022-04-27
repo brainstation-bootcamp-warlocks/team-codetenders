@@ -20,45 +20,46 @@
       * </div> 
 */
 // Url
-const url = 'https://www.thecocktaildb.com/api/json/v2/';
-const key = '9973533';
+const url = "https://www.thecocktaildb.com/api/json/v2/";
+const key = "9973533";
 // search by multiple ingredients
-const urlFilter = '/filter.php?i=';
+const urlFilter = "/filter.php?i=";
 const ingredient = [];
 // search by drink name
+
 const cocktailInfo = '/search.php?s=';
 let drinkName;
 
 const displayDrinks = (drinksObject) => {
-  const drinkContainer = document.createElement('div');
-  drinkContainer.classList.add('drink__container');
+  const drinkContainer = document.createElement("div");
+  drinkContainer.classList.add("drink__container");
 
   // create drink cards elements
-  const drinkNameImg = document.createElement('div');
-  drinkNameImg.classList.add('drink__name-img');
+  const drinkNameImg = document.createElement("div");
+  drinkNameImg.classList.add("drink__name-img");
 
   // create drink name title
-  const drinkSubtitle = document.createElement('h3');
-  drinkSubtitle.classList.add('drink__subtitle');
+  const drinkSubtitle = document.createElement("h3");
+  drinkSubtitle.classList.add("drink__subtitle");
 
-  const drinkImg = document.createElement('img');
-  drinkImg.classList.add('drink__img');
-  drinkImg.setAttribute('src', '../assets/images/drink.jpg');
-  drinkImg.setAttribute('alt', 'drink');
+  const drinkImg = document.createElement("img");
+  drinkImg.classList.add("drink__img");
+  drinkImg.setAttribute("src", "../assets/images/drink.jpg");
+  drinkImg.setAttribute("alt", "drink");
 
   // drink body container
-  const drinkBodyContainer = document.createElement('div');
-  drinkBodyContainer.classList.add('drink__body-container');
+  const drinkBodyContainer = document.createElement("div");
+  drinkBodyContainer.classList.add("drink__body-container");
 };
 
-const getForm = document.getElementById('ingredients__form');
+const getForm = document.getElementById("ingredients-form");
 
 // read checks values to store them in array
-getForm.addEventListener('submit', (e) => {
+getForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const getCheckbox = document.querySelectorAll('input[type="checkbox"]');
 
-  if (ingredient !== '') {
+  if (ingredient !== "") {
     ingredient.splice(0, ingredient.length);
     for (let i = 0; i < getCheckbox.length; i++) {
       if (getCheckbox[i].checked === true) {

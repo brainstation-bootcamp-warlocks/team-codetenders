@@ -37,6 +37,20 @@
   font-size: 3rem;
   padding-bottom: 3rem;
 }
+.ingredients__button {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 1.25rem;
+  height: 4rem;
+  width: 12rem;
+  background-color: #6fc290;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 3rem;
+}
 
 .ingredients-list {
   display: flex;
@@ -44,15 +58,24 @@
 }
 .ingredients-list__item {
   display: flex;
+  align-content: center;
   flex: 0 0 25%;
   padding: 1rem;
 }
 
+.ingredients-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .item-check-box {
   display: flex;
+  align-self: center;
   position: relative;
-  left: -4rem;
-  accent-color: #ea9c9c;
+  left: -2rem;
+  height: 25px;
+  width: 25px;
+  background-color: #ea9c9c;
 }
 
 .item-label {
