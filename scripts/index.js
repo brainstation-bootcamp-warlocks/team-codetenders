@@ -5,13 +5,13 @@
         <h3 class="drink__subtitle">Drink Name</h3>
         <img class="drink__img" src="./assets/images/drink.jpg" alt="drink">
         </div>
-        * <div class="drink__body-container">
-          * <div class="drink__ingredient-container">
-            * <p class="drink__ingredient">Ingredient One - <span class="drink__measurement">Amount</span></p>
-            * <p class="drink__ingredient">Ingredient Two - <span class="drink__measurement">Amount</span></p>
-            * <p class="drink__ingredient">Ingredient Three - <span class="drink__measurement">Amount</span></p>
-            * <p class="drink__ingredient">Ingredient four - <span class="drink__measurement">Amount</span></p>
-          * </div>
+        <div class="drink__body-container">
+          <div class="drink__ingredient-container">
+            <p class="drink__ingredient">Ingredient One - <span class="drink__measurement">Amount</span></p>
+            <p class="drink__ingredient">Ingredient Two - <span class="drink__measurement">Amount</span></p>
+            <p class="drink__ingredient">Ingredient Three - <span class="drink__measurement">Amount</span></p>
+            <p class="drink__ingredient">Ingredient four - <span class="drink__measurement">Amount</span></p>
+          </div>
           * <div class="drink__instructions-container">
             * <h3 class="drink__instructions-title">Instructions</h3>
            *  <p class="drink__instructions-body">Drinks instructions to follow</p>
@@ -35,24 +35,76 @@ const displayDrinks = (drinksObject) => {
   const drinkContainer = document.createElement('div');
   drinkContainer.classList.add('drink__container');
 
-  // create drink cards elements
+  // create drink title and img container
   const drinkNameImg = document.createElement('div');
   drinkNameImg.classList.add('drink__name-img');
 
-  // create drink name title
+  // create drink name title div
   const drinkSubtitle = document.createElement('h3');
   drinkSubtitle.classList.add('drink__subtitle');
 
+  // create drink img div
   const drinkImg = document.createElement('img');
   drinkImg.classList.add('drink__img');
   drinkImg.setAttribute('src', drinksObject.strDrinkThumb);
   drinkImg.setAttribute('alt', 'drink');
 
-  // drink body container
+  // drink card body elements container
   const drinkBodyContainer = document.createElement('div');
   drinkBodyContainer.classList.add('drink__body-container');
 
-  drinkContainer.append(drinkImg);
+  // drinks ingredients and measurements title
+  const ingredientsTitle = document.createElement('h3');
+  ingredientsTitle.classList.add('drink__ingredients-title');
+  ingredientsTitle.innerText = 'Ingredients and Measurements';
+
+  drinkBodyContainer.append(ingredientsTitle);
+
+  /* * <div class="drink__instructions-container">
+   * <h3 class="drink__instructions-title">Instructions</h3>
+   *  <p class="drink__instructions-body">Drinks instructions to follow</p>
+   * </div> */
+
+  // create instructions container
+  const drinkInstructionsContainer = document.createElement('div');
+  drinkInstructionsContainer.classList.add('drink__instructions-container');
+
+  // create instructions container title
+  const drinkInstructionsTitle = document.createElement('h3');
+  drinkInstructionsTitle.classList.add('drink__instructions-title');
+
+  // create drink instructions
+  const drinkInstructions = document.createElement('p');
+  drinkInstructions.classList.add('drink__instructions-body');
+
+  drinkInstructionsTitle.innerText = 'Instructions';
+  drinkInstructions.innerText = drinksObject.strInstructions;
+
+  drinkInstructionsContainer.append(drinkInstructionsTitle, drinkInstructions);
+
+  for (let i = 1; i <= 15; i++) {
+    const bodyCardContainer = document.createElement('div');
+    bodyCardContainer.classList.add('drink__ingredient-container');
+
+    if (
+      drinksObject[`strIngredient${i}`] === null ||
+      drinksObject[`strIngredient${i}`] === ''
+    ) {
+      break;
+    }
+
+    bodyCardContainer.innerText =
+      drinksObject[`strIngredient${i}`] +
+      ` - ` +
+      drinksObject[`strMeasure${i}`];
+
+    drinkBodyContainer.append(bodyCardContainer, drinkInstructionsContainer);
+  }
+
+  drinkSubtitle.innerText = drinksObject.strDrink;
+
+  drinkNameImg.append(drinkSubtitle, drinkImg);
+  drinkContainer.append(drinkNameImg, drinkBodyContainer);
 
   return drinkContainer;
 };
