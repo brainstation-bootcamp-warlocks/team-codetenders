@@ -1,9 +1,10 @@
 .nav {
   display: flex;
   justify-content: center;
-  background-color: #ababab;
+  background-color: #080601;
   &__logo {
-    color: black;
+    font-family: "Lexend", sans-serif;
+    color: #d6a83b;
     padding: 1rem 0rem;
     font-size: 3rem;
     font-weight: 600;
