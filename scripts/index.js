@@ -1,24 +1,3 @@
-/* 
-  blue print of what we have to do
-  * <div class="drink__container">
-        <div class="drink__name-img">
-        <h3 class="drink__subtitle">Drink Name</h3>
-        <img class="drink__img" src="./assets/images/drink.jpg" alt="drink">
-        </div>
-        <div class="drink__body-container">
-          <div class="drink__ingredient-container">
-            <p class="drink__ingredient">Ingredient One - <span class="drink__measurement">Amount</span></p>
-            <p class="drink__ingredient">Ingredient Two - <span class="drink__measurement">Amount</span></p>
-            <p class="drink__ingredient">Ingredient Three - <span class="drink__measurement">Amount</span></p>
-            <p class="drink__ingredient">Ingredient four - <span class="drink__measurement">Amount</span></p>
-          </div>
-          * <div class="drink__instructions-container">
-            * <h3 class="drink__instructions-title">Instructions</h3>
-           *  <p class="drink__instructions-body">Drinks instructions to follow</p>
-          * </div>
-        * </div>
-      * </div> 
-*/
 // Url
 const url = "https://www.thecocktaildb.com/api/json/v2/";
 const key = "9973533";
@@ -27,13 +6,13 @@ const urlFilter = "/filter.php?i=";
 const ingredient = [];
 // search by drink name
 
-const cocktailInfo = "/search.php?s=";
-let drinkName;
+
+const cocktailInfo = '/search.php?s=';
 
 const displayDrinks = (drinksObject) => {
-  console.log(drinksObject);
-  const drinkContainer = document.createElement("div");
-  drinkContainer.classList.add("drink__container");
+  const drinkContainer = document.createElement('div');
+  drinkContainer.classList.add('drink__container');
+
 
   // create drink title and img container
   const drinkNameImg = document.createElement("div");
@@ -59,11 +38,6 @@ const displayDrinks = (drinksObject) => {
   ingredientsTitle.innerText = "Ingredients and Measurements";
 
   drinkBodyContainer.append(ingredientsTitle);
-
-  /* * <div class="drink__instructions-container">
-   * <h3 class="drink__instructions-title">Instructions</h3>
-   *  <p class="drink__instructions-body">Drinks instructions to follow</p>
-   * </div> */
 
   // create instructions container
   const drinkInstructionsContainer = document.createElement("div");
@@ -153,36 +127,55 @@ getForm.addEventListener("submit", (e) => {
   fetchDrinks();
   // reset checks
   e.target.reset();
-  // // prevent submit when checks are empty
-  // if (!getForm.cocktails.checked) {
-  //   return false;
-  // }
 });
 
 // get drinks by ingredients
 const fetchDrinks = () => {
   const arrayToString = ingredient.join();
   const getDrinks = url + key + urlFilter + arrayToString;
-  /* if (test something){
-     add class with the spinner using css 
-  } */
+
   axios
     .get(getDrinks)
     .then(async (response) => {
       let dataDrinks = [];
+      if (typeof response.data.drinks === 'string') {
+        const errorMessage = document.querySelector('.drink__title');
+        errorMessage.innerText = `You wouldn't want to try that poison!`;
 
-      await response.data.drinks.reduce(async (previous, currentDrink) => {
-        await previous;
-        await axios
-          .get(url + key + cocktailInfo + currentDrink.strDrink)
-          .then((response) => dataDrinks.push(response.data.drinks[0]));
-      }, Promise.resolve());
-      renderDrinks(dataDrinks);
+        const removeEl = document.querySelector('.drink__card-container');
+        removeEl.remove();
+      } else {
+        await response.data.drinks.reduce(async (previous, currentDrink) => {
+          await previous;
+          await axios
+            .get(url + key + cocktailInfo + currentDrink.strDrink)
+            .then((response) => {
+              dataDrinks.push(response.data.drinks[0]);
+              const normalTitle = document.querySelector('.drink__title');
+              normalTitle.innerText = 'Your Drink';
+            });
+        }, Promise.resolve());
+        renderDrinks(dataDrinks);
+      }
     })
     .catch((error) => {
       console.log("Do not try that!!");
     });
 };
-
+  
+  
 const siteLogo = document.querySelector(".nav__logo");
 siteLogo.innerText = "<code/>Tenders";
+
+const defaultDrink = () => {
+  const randomDrink = '/random.php';
+  const randomDrinkUrl = url + key + randomDrink;
+  axios.get(randomDrinkUrl).then((response) => {
+    renderDrinks(response.data.drinks);
+    const randomTitle = document.querySelector('.drink__title');
+    randomTitle.innerText = 'Your Random Drink';
+  });
+};
+
+defaultDrink();
+
