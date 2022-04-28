@@ -1,105 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&family=Lexend&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>CodeTenders</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles/index.css" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <title>CodeTenders</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>CodeTenders</title>
+  </head>
 
+  <body>
+    <nav class="nav">
+      <h1 class="nav__logo"></h1>
+    </nav>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./styles/index.css" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <title>CodeTenders</title>
-</head>
-
-<body>
-  <nav class="nav">
-    <h2 class="nav__logo">CodeTenders</h2>
-  </nav>
-
-  <header>
-    <div class="hero">
-      <div class="hero__container">
-        <img class="hero__img" src="./assets/images/bar.avif" alt="gentleman siting at bar" />
-        <p class="hero__title">The Best Drinks you can ever ask!</p>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="ingredients">
-      <h2 class="ingredients__title">Chose Your Ingredients</h2>
-
-      <form id="ingredients-form" class="ingredients-form-container">
-        <div class="ingredients-list">
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="tequila" value="tequila" name="cocktails" />
-            <label class="item-label" for="tequila">Tequila</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="vodka" value="vodka" name="cocktails" />
-            <label class="item-label" for="vodka">Vodka</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="whiskey" value="whiskey" name="cocktails" /><label
-              class="item-label" for="whiskey">Whiskey</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="rum" value="rum" name="cocktails" /><label
-              class="item-label" for="rum">Rum</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="gin" value="gin" name="cocktails" /><label
-              class="item-label" for="gin">Gin</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="wine" value="wine" name="cocktails" /><label
-              class="item-label" for="wine">Wine</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="brandy" value="brandy" name="cocktails" /><label
-              class="item-label" for="brandy">Brandy</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="champagne" value="champagne" name="cocktails" /><label
-              class="item-label" for="champagne">Champagne</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="beer" value="beer" name="cocktails" /><label
-              class="item-label" for="beer">Beer</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="sambuca" value="sambuca" name="cocktails" /><label
-              class="item-label" for="sambuca">Sambuca</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="scotch" value="scotch" name="cocktails" /><label
-              class="item-label" for="scotch">Scotch</label>
-          </div>
-          <div class="ingredients-list__item">
-            <input class="item-check-box" type="checkbox" id="bourbon" value="bourbon" name="cocktails" /><label
-              class="item-label" for="bourbon">Bourbon</label>
-          </div>
+    <header>
+      <div class="hero">
+        <div class="hero__container">
+          <img
+            class="hero__img"
+            src="./assets/images/bar.avif"
+            alt="gentleman siting at bar"
+          />
+          <div class="hero__title-container"></div>
+          <h2 class="hero__title">The Best Drinks you can ever ask!</h2>
         </div>
-        <button class="ingredients__button" type="submit">SHAKE IT!</button>
-      </form>
-    </section>
+      </div>
+    </header>
 
-    <section class="drink">
-      <h2 class="drink__title">Your Drinks</h2>
-      <div class="drink__cards"></div>
-    </section>
-  </main>
-  <script src="/scripts/index.js"></script>
-</body>
+    <main>
+      <section class="ingredients">
+        <h2 class="ingredients__title">Chose Your Ingredients</h2>
 
+        <form id="ingredients-form" class="ingredients-form-container">
+          <div class="ingredients-list">
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="tequila"
+                value="tequila"
+                name="cocktails"
+              />
+              <label class="item-label" for="tequila">Tequila</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="vodka"
+                value="vodka"
+                name="cocktails"
+              />
+              <label class="item-label" for="vodka">Vodka</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="whiskey"
+                value="whiskey"
+                name="cocktails"
+              /><label class="item-label" for="whiskey">Whiskey</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="rum"
+                value="rum"
+                name="cocktails"
+              /><label class="item-label" for="rum">Rum</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="gin"
+                value="gin"
+                name="cocktails"
+              /><label class="item-label" for="gin">Gin</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="wine"
+                value="wine"
+                name="cocktails"
+              /><label class="item-label" for="wine">Wine</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="brandy"
+                value="brandy"
+                name="cocktails"
+              /><label class="item-label" for="brandy">Brandy</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="champagne"
+                value="champagne"
+                name="cocktails"
+              /><label class="item-label" for="champagne">Champagne</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="beer"
+                value="beer"
+                name="cocktails"
+              /><label class="item-label" for="beer">Beer</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="sambuca"
+                value="sambuca"
+                name="cocktails"
+              /><label class="item-label" for="sambuca">Sambuca</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="scotch"
+                value="scotch"
+                name="cocktails"
+              /><label class="item-label" for="scotch">Scotch</label>
+            </div>
+            <div class="ingredients-list__item">
+              <input
+                class="item-check-box"
+                type="checkbox"
+                id="bourbon"
+                value="bourbon"
+                name="cocktails"
+              /><label class="item-label" for="bourbon">Bourbon</label>
+            </div>
+          </div>
+          <button class="ingredients__button" type="submit">SHAKE IT!</button>
+        </form>
+      </section>
+
+      <section class="drink">
+        <h2 class="drink__title">Your Drinks</h2>
+        <div class="drink__cards"></div>
+      </section>
+
+      <!-- <label>
+        <input type="checkbox" />
+        <span></span>
+        Tequila
+      </label>
+
+
+      <div class="ingredients-list__item">
+        <input
+          class="item-check-box"
+          type="checkbox"
+          id="water"
+          value="water"
+          name="cocktails"
+        /><label class="item-label" for="water">water</label>
+      </div> -->
+    </main>
+    <script src="/scripts/index.js"></script>
+  </body>
 </html>

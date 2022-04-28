@@ -1,10 +1,11 @@
 // Url
-const url = 'https://www.thecocktaildb.com/api/json/v2/';
-const key = '9973533';
+const url = "https://www.thecocktaildb.com/api/json/v2/";
+const key = "9973533";
 // search by multiple ingredients
-const urlFilter = '/filter.php?i=';
+const urlFilter = "/filter.php?i=";
 const ingredient = [];
 // search by drink name
+
 
 const cocktailInfo = '/search.php?s=';
 
@@ -12,55 +13,56 @@ const displayDrinks = (drinksObject) => {
   const drinkContainer = document.createElement('div');
   drinkContainer.classList.add('drink__container');
 
+
   // create drink title and img container
-  const drinkNameImg = document.createElement('div');
-  drinkNameImg.classList.add('drink__name-img');
+  const drinkNameImg = document.createElement("div");
+  drinkNameImg.classList.add("drink__name-img");
 
   // create drink name title div
-  const drinkSubtitle = document.createElement('h3');
-  drinkSubtitle.classList.add('drink__subtitle');
+  const drinkSubtitle = document.createElement("h3");
+  drinkSubtitle.classList.add("drink__subtitle");
 
   // create drink img div
-  const drinkImg = document.createElement('img');
-  drinkImg.classList.add('drink__img');
-  drinkImg.setAttribute('src', drinksObject.strDrinkThumb);
-  drinkImg.setAttribute('alt', 'drink');
+  const drinkImg = document.createElement("img");
+  drinkImg.classList.add("drink__img");
+  drinkImg.setAttribute("src", drinksObject.strDrinkThumb);
+  drinkImg.setAttribute("alt", "drink");
 
   // drink card body elements container
-  const drinkBodyContainer = document.createElement('div');
-  drinkBodyContainer.classList.add('drink__body-container');
+  const drinkBodyContainer = document.createElement("div");
+  drinkBodyContainer.classList.add("drink__body-container");
 
   // drinks ingredients and measurements title
-  const ingredientsTitle = document.createElement('h3');
-  ingredientsTitle.classList.add('drink__ingredients-title');
-  ingredientsTitle.innerText = 'Ingredients and Measurements';
+  const ingredientsTitle = document.createElement("h3");
+  ingredientsTitle.classList.add("drink__ingredients-title");
+  ingredientsTitle.innerText = "Ingredients and Measurements";
 
   drinkBodyContainer.append(ingredientsTitle);
 
   // create instructions container
-  const drinkInstructionsContainer = document.createElement('div');
-  drinkInstructionsContainer.classList.add('drink__instructions-container');
+  const drinkInstructionsContainer = document.createElement("div");
+  drinkInstructionsContainer.classList.add("drink__instructions-container");
 
   // create instructions container title
-  const drinkInstructionsTitle = document.createElement('h3');
-  drinkInstructionsTitle.classList.add('drink__instructions-title');
+  const drinkInstructionsTitle = document.createElement("h3");
+  drinkInstructionsTitle.classList.add("drink__instructions-title");
 
   // create drink instructions
-  const drinkInstructions = document.createElement('p');
-  drinkInstructions.classList.add('drink__instructions-body');
+  const drinkInstructions = document.createElement("p");
+  drinkInstructions.classList.add("drink__instructions-body");
 
-  drinkInstructionsTitle.innerText = 'Instructions';
+  drinkInstructionsTitle.innerText = "Instructions";
   drinkInstructions.innerText = drinksObject.strInstructions;
 
   drinkInstructionsContainer.append(drinkInstructionsTitle, drinkInstructions);
 
   for (let i = 1; i <= 15; i++) {
-    const bodyCardContainer = document.createElement('div');
-    bodyCardContainer.classList.add('drink__ingredient-container');
+    const bodyCardContainer = document.createElement("div");
+    bodyCardContainer.classList.add("drink__ingredient-container");
 
     if (
       drinksObject[`strIngredient${i}`] === null ||
-      drinksObject[`strIngredient${i}`] === ''
+      drinksObject[`strIngredient${i}`] === ""
     ) {
       break;
     }
@@ -83,11 +85,11 @@ const displayDrinks = (drinksObject) => {
 
 const renderDrinks = (listOfDrinks) => {
   // select class to append drinks
-  const drink = document.querySelector('.drink__cards');
+  const drink = document.querySelector(".drink__cards");
 
   // create a drink card container
-  const drinkContainer = document.createElement('div');
-  drinkContainer.classList.add('drink__card-container');
+  const drinkContainer = document.createElement("div");
+  drinkContainer.classList.add("drink__card-container");
 
   listOfDrinks.forEach((drinksArray) => {
     drinkContainer.append(displayDrinks(drinksArray));
@@ -97,7 +99,7 @@ const renderDrinks = (listOfDrinks) => {
   });
 };
 
-let emptySelector = document.querySelector('.drink');
+let emptySelector = document.querySelector(".drink");
 
 let empty = (element) => {
   while (element.firstElementChild) {
@@ -105,14 +107,14 @@ let empty = (element) => {
   }
 };
 
-const getForm = document.getElementById('ingredients-form');
+const getForm = document.getElementById("ingredients-form");
 
 // read checks values to store them in array
-getForm.addEventListener('submit', (e) => {
+getForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const getCheckbox = document.querySelectorAll('input[type="checkbox"]');
 
-  if (ingredient !== '') {
+  if (ingredient !== "") {
     ingredient.splice(0, ingredient.length);
     for (let i = 0; i < getCheckbox.length; i++) {
       if (getCheckbox[i].checked === true) {
@@ -157,9 +159,13 @@ const fetchDrinks = () => {
       }
     })
     .catch((error) => {
-      error = 'Do not try that!!';
+      console.log("Do not try that!!");
     });
 };
+  
+  
+const siteLogo = document.querySelector(".nav__logo");
+siteLogo.innerText = "<code/>Tenders";
 
 const defaultDrink = () => {
   const randomDrink = '/random.php';
@@ -172,3 +178,4 @@ const defaultDrink = () => {
 };
 
 defaultDrink();
+

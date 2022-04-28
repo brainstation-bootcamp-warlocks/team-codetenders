@@ -1,11 +1,11 @@
 .ingredients {
   padding: 3rem 5rem;
-  background-color: #ababab;
+  background-color: #e7e4cf;
   display: flex;
   flex-direction: column;
 
   &__title {
-    color: white;
+    color: #080601;
     font-size: 3rem;
     padding-bottom: 3rem;
     font-weight: 700;
@@ -20,7 +20,7 @@
     font-size: 1.25rem;
     height: 4rem;
     width: 12rem;
-    background-color: #6fc290;
+    background-color: #d6a83b;
     border: none;
     border-radius: 0.5rem;
     margin-top: 3rem;
@@ -64,7 +64,7 @@
   margin-left: 1rem;
   height: 3rem;
   width: 8rem;
-  background-color: #ea9c9c;
+  background-color: #cc9d49;
   border: none;
   border-radius: 0.5rem;
 }
