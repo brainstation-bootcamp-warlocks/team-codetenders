@@ -50,9 +50,8 @@
   align-self: center;
   position: relative;
   left: -2rem;
-  height: 25px;
-  width: 25px;
-  background-color: #ea9c9c;
+  height: 1.6rem;
+  width: 1.6rem;
 }
 
 .item-label {
@@ -63,8 +62,38 @@
   font-size: 1.25rem;
   margin-left: 1rem;
   height: 3rem;
-  width: 8rem;
+  width: 9rem;
   background-color: #cc9d49;
   border: none;
   border-radius: 0.5rem;
+}
+
+// Check Box
+
+label input {
+  display: none; /* Hide the default checkbox */
+}
+
+/* Style the artificial checkbox */
+label span {
+  font-size: 4rem;
+  height: 3rem;
+  width: 3rem;
+  border: 0 solid grey;
+  color: black;
+  background-color: #cc9d49;
+  border-radius: 0.5rem;
+  display: inline-block;
+  position: relative;
+  font-family: "Domine", serif;
+}
+
+/* Style its checked state...with a ticked icon */
+[type="checkbox"]:checked + span:before {
+  content: "\2714";
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  top: -1rem;
+  left: 1px;
 }
