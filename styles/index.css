@@ -66,6 +66,13 @@
   border: none;
   border-radius: 0.5rem;
   margin-top: 3rem;
+  cursor: pointer;
+}
+.ingredients__button:hover {
+  background-color: #cc9d49;
+}
+.ingredients__check {
+  cursor: pointer;
 }
 
 .ingredients-list {
@@ -105,6 +112,7 @@
   background-color: #cc9d49;
   border: none;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 label input {

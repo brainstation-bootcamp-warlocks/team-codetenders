@@ -24,6 +24,16 @@
     border: none;
     border-radius: 0.5rem;
     margin-top: 3rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #cc9d49;
+    }
+  }
+
+  // checkbox pointer 
+  &__check {
+    cursor: pointer;
   }
 }
 
@@ -66,6 +76,7 @@
   background-color: #cc9d49;
   border: none;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 // Check Box
