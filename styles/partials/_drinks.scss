@@ -11,6 +11,7 @@
 
   &__container {
     display: flex;
+    padding: 2rem;
   }
 
   &__name-img {
@@ -24,19 +25,41 @@
 
   &__subtitle {
     padding-bottom: 1rem;
+    font-size: 1.8rem;
   }
 
   &__body-container {
     flex-direction: column;
-    padding-left: 2rem;
-    align-self: center;
+    margin-left: 2rem;
+    padding: 1.5rem;
+    background-color: #e7e4cf;
+    border-radius: 0.5rem;
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+
+
+  &__instructions-title {
+    padding: 1rem 0 0.5rem;
+  }
+
+  &__ingredients-title {
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  &__instructions-body{
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   &__ingredient-container {
-    padding-bottom: 1rem;
-  }
+    font-size: 1rem;
+    line-height: 1.5rem;
+  } 
 
   &__instructions-title {
-    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
   }
 }
