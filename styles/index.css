@@ -66,6 +66,10 @@
   border: none;
   border-radius: 0.5rem;
   margin-top: 3rem;
+  cursor: pointer;
+}
+.ingredients__button:hover {
+  background-color: #cc9d49;
 }
 
 .ingredients-list {
@@ -148,6 +152,7 @@ label span {
 }
 .drink__container {
   display: flex;
+  padding: 2rem;
 }
 .drink__name-img {
   flex-direction: column;
@@ -158,17 +163,34 @@ label span {
 }
 .drink__subtitle {
   padding-bottom: 1rem;
+  font-size: 1.8rem;
 }
 .drink__body-container {
   flex-direction: column;
-  padding-left: 2rem;
-  align-self: center;
-}
-.drink__ingredient-container {
-  padding-bottom: 1rem;
+  margin-left: 2rem;
+  padding: 1.5rem;
+  background-color: #e7e4cf;
+  border-radius: 0.5rem;
+  margin-top: 3rem;
+  width: 100%;
 }
 .drink__instructions-title {
+  padding: 1rem 0 0.5rem;
+}
+.drink__ingredients-title {
+  font-size: 1.25rem;
   padding-bottom: 0.5rem;
+}
+.drink__instructions-body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.drink__ingredient-container {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.drink__instructions-title {
+  font-size: 1.25rem;
 }
 
 * {
