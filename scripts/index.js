@@ -136,6 +136,7 @@ const fetchDrinks = () => {
     .get(getDrinks)
     .then(async (response) => {
       let dataDrinks = [];
+
       if (typeof response.data.drinks === 'string') {
         const errorMessage = document.querySelector('.drink__title');
         errorMessage.innerText = `You wouldn't want to try that poison!`;
